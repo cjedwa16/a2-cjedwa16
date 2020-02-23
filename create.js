@@ -21,7 +21,7 @@ file.on('line', function(line)  {
   voterRows.push(new Voter({
     firstName: columns[0],
     lastName: columns[1],
-    zipCode: Number(columns[2]),
+    zipCode: columns[2],
     historyString: columns[3]
   })
 );
