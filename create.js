@@ -29,7 +29,8 @@ file.on('line', function(line)  {
 file.on('close', function()  {
 // Reset the data
 mongoose.connection.dropDatabase()
-  Promise.all(voterRows.map(v => v.save()))
+  const saves = voterRows.map(v => v.save());
+  Promise.all(saves)
     // close connection
     .then(() => mongoose.connection.close())
     .then(() => console.log('Database is ready.'))
