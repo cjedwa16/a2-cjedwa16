@@ -21,7 +21,7 @@ file.on('line', function(line)  {
     firstName: columns[0],
     lastName: columns[1],
     zipCode: columns[2],
-    historyString: columns.slice(3)
+    historyString: columns[3]
   }));
 });
 
@@ -31,7 +31,7 @@ file.on('close', function()  {
   mongoose.connection.dropDatabase()
   .then(() => Promise.all(voterRows.map(d => d.save())))
     // close connection
-    .then(() => mongoose.connection.close())
-    .then(() => console.log('Database is ready.'))
-    .catch(error => console.error(error.stack));
+  .then(() => mongoose.connection.close())
+  .then(() => console.log('Database is ready.'))
+  .catch(error => console.error(error.stack));
 });
