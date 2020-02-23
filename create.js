@@ -2,8 +2,6 @@
 const mongoose = require('mongoose');
 const connect = require('./db');
 const Voter = require('./schema');
-
-
 // we need to read the file
 const fs = require('fs');
 const readline= require('readline');
@@ -22,12 +20,10 @@ file.on('line', function(line)  {
     firstName: columns[0],
     lastName: columns[1],
     zipCode: columns[2],
-    historyString: columns[3]
+    historyString: columns.slice(3)
   })
 );
   });
-
-
 
 
 file.on('close', function()  {
