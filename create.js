@@ -1,10 +1,10 @@
 
 
-const fs = require('fs');
-const readline= require('readline');
 const mongoose = require('mongoose');
 const connect = require('./db');
 const Voter = require('./schema');
+const fs = require('fs');
+const readline= require('readline');
 
 connect(); // To the database
 
