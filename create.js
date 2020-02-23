@@ -15,7 +15,7 @@ const file = readline.createInterface ({
 // create an array of objects, so that each line of the file is represented by an object with 4 properties
 const voterRows = [];
 file.on('line', function(line)  {
-  const columns = line.split(',');
+  var columns = line.split(',');
   voterRows.push(new Voter({
     firstName: columns[0],
     lastName: columns[1],
@@ -28,7 +28,7 @@ file.on('line', function(line)  {
 file.on('close', function()  {
 // Reset the data
 mongoose.connection.dropDatabase()
-  .then(() => Promise.all(voterRows.map(d => d.save())))
+  .then(() => Promise.all(voterRows.map(v => v.save())))
     // close connection
   .then(() => mongoose.connection.close())
   .then(() => console.log('Database is ready.'))
