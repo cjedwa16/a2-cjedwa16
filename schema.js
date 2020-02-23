@@ -8,7 +8,7 @@ const Voter = new mongoose.Schema({
   firstName: String,
   lastName: String,
   zipCode: Number,
-  historyString: [String]
+  historyString: String
 });
 
 
