@@ -21,7 +21,8 @@ file.on('line', function(line)  {
     lastName: columns[1],
     zipCode: columns[2],
     historyString: columns[3]
-  }));
+  }).save()
+);
 });
 
 
