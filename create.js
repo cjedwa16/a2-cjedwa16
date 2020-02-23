@@ -1,3 +1,5 @@
+
+
 const fs = require('fs');
 const readline= require('readline');
 const mongoose = require('mongoose');
@@ -19,8 +21,7 @@ file.on('line', function(line)  {
     lastName: columns[1],
     zipCode: columns[2],
     historyString: columns[3]
-  })
-  );
+  }));
 });
 
 
