@@ -26,7 +26,6 @@ Voter.distinct('zipCode')
 
 ];
 
-
 // Run the queries in parallel
 Promise.all(queries)
   .then(function(results) {
