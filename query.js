@@ -10,7 +10,7 @@ connect(); // To the database
 const queries = [
 
 // How many registered voters live in the Canton zip code (13617)?
-Voter.find().where('zipCode').equals(13617).count()
+Voter.find().where('zipCode').equals(13617).count(),
 
 // What are the full names of all the registered voters whose first-name is STARR?
 Voter.find().where('firstName').equals('STARR'),
