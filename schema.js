@@ -13,7 +13,7 @@ const Voter = new mongoose.Schema({
 
 
 // Speed up queries on all fields
-Voter.index({firstName: 1});   // I want to be able to look up professors by their name and quicly
+Voter.index({firstName: 1});  
 Voter.index({lastName: 1});
 Voter.index({zipCode: 1});
 Voter.index({historyString: 1});
