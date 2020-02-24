@@ -6,7 +6,6 @@ const Voter = require('./schema');
 
 connect(); // To the database
 
-
 const queries = [
 
 // How many registered voters live in the Canton zip code (13617)?
