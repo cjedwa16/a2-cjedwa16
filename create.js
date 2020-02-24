@@ -25,7 +25,6 @@ file.on('line', function(line)  {
 );
 });
 
-
 file.on('close', function()  {
 // Reset the data
 mongoose.connection.dropDatabase()
