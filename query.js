@@ -15,7 +15,7 @@ Voter.find().where('zipCode').equals('13617').count(),
 Voter.find().where('firstName').equals('STARR'),
 
 // How many people voted in the 2016 general election (GE16)?
-Voter.find({"history":{$regex: '.*GE16.*'}}).count(),
+Voter.find({"historyString":{$regex: '.*GE16.*'}}),
 
 // What is the last-name that comes last in the county in alphabetical order?
 Voter.find().sort('-lastName').limit(1),
@@ -30,7 +30,7 @@ Promise.all(queries)
   .then(function(results) {
     console.log('The number of registered voters that live in zip code 13617: ', results[0]);
     console.log('The full names of all of the registered voters whose first-name is STARR: ', results[1].map(v => v.firstName + ' ' + v.lastName));
-    console.log('Number of people who voted in the GE 2016: ', results[2]);
+    console.log('Number of people who voted in the GE 2016: ', results[2].length);
     console.log('The last-name that comes in last in the county in alphabetical order:  ', results[3].map(v => v.lastName));
     console.log('The number of zip codes that the county contains: ', results[4].length);
     mongoose.connection.close();
